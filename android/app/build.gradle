@@ -1,0 +1,48 @@
+plugins {
+    id "com.android.application" // Android application plugin
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services' // Google services plugin (Firebase, Google Sign-In, etc.)
+    // END: FlutterFire Configuration
+    id "kotlin-android" // Kotlin support
+    id "dev.flutter.flutter-gradle-plugin" // Flutter plugin
+}
+
+android {
+    namespace = "com.example.login"  // Your package name
+    compileSdk = flutter.compileSdkVersion  // Flutter SDK compile SDK version
+    ndkVersion = flutter.ndkVersion  // NDK version from Flutter config
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17 // Java 17 compatibility
+        targetCompatibility = JavaVersion.VERSION_17 // Java 17 compatibility
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17 // Kotlin JVM target 17
+    }
+
+    defaultConfig {
+        applicationId = "com.example.login"  // Your app's application ID (package name)
+        minSdkVersion 23  // Minimum SDK version supported
+        targetSdk = flutter.targetSdkVersion  // Target SDK version from Flutter config
+        versionCode = flutter.versionCode  // Version code for your app
+        versionName = flutter.versionName  // Version name for your app
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug  // Use debug signing config for release (replace with your own for actual release)
+        }
+    }
+}
+
+flutter {
+    source = "../.."  // Flutter project location
+}
+
+dependencies {
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+    implementation 'com.google.android.gms:play-services-auth:21.3.0'  // For Google Sign-In
+    implementation 'com.google.firebase:firebase-auth:23.2.0'  // If using Firebase Authentication
+    // Add any other Firebase or Google services dependencies here
+}
