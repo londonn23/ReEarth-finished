@@ -122,7 +122,7 @@ class _ChatBotState extends State<ChatBot> {
   String prompt =
       "In short words, give a simple to follow step-by-step instruction on how to recycle the following items, give more than 5 steps";
 
-  final apiKey = 'AIzaSyAdMqSVmk1Jv5W_qj25x92eUk8h7cHgkS0';
+  final apiKey = 'not that easy bro';
   String? response = "Generated text will be displayed here";
 
   Future<String?> talkWithGemini(String userInput) async {
